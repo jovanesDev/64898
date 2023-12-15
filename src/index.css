@@ -3,3 +3,28 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.active_nav {
+
+  color: royalblue;
+}

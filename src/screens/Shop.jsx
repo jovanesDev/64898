@@ -1,9 +1,23 @@
-import React from 'react'
-
+import Card from "../components/Card";
+import { jugadores } from "../content/jugadores.info";
 const Shop = () => {
-  return (
-    <h1>Shop</h1>
-  )
-}
 
-export default Shop
+  jugadores
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: "30px",
+        flexWrap: "wrap",
+        justifyContent: "center",
+      }}
+    >
+      {jugadores.map((jugador, index) => (
+        <Card key={index} {...jugador} />
+      ))}
+    </div>
+  );
+};
+
+export default Shop;

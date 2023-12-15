@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
 import Count from "./Count";
+import { useNavigate } from "react-router-dom";
 
 export default function Card(props) {
-  const { titulo, img, descripcion,counter_default } = props;
-  console.log(counter_default)
+  const { titulo, img, descripcion, counter_default, id } = props;
+  const navigate = useNavigate();
   return (
     <div
       className={"card"}
@@ -27,7 +28,15 @@ export default function Card(props) {
           {descripcion}
         </p>
         <div className="w-100">
-          <button className="btn btn-secondary w-100">Ver Mas !!! </button>
+          {/* <Link to={`/player/${id}`} className="btn btn-secondary w-100">
+            Ver Mas
+          </Link> */}
+          <button
+            onClick={() => navigate(`/player/${id}`, { state: props })}
+            className="btn btn-secondary w-100"
+          >
+            Ver Mas !!!{" "}
+          </button>
         </div>
       </div>
     </div>
